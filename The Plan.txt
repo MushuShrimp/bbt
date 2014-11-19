@@ -1,0 +1,19 @@
+Game Idea: Bubble Tea Maker
+
+Mechanics: Control a hand and to make a cup of bubble tea. Pick up ingredients and place them inside a cup in a specific order to maximum score. Ability to pick up the cup and shake to mix the bubble tea.
+
+Ingredient List:
+- Tapioca
+- Tea (Black or Green)
+- Sugar
+- Milk
+- Jelly
+- Ice
+
+Flavours
+- Mango
+- Strawberry
+- Taro
+- HoneyDew
+- Lychee
+- Peach
