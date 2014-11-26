@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb</Output>
+      <Time>2014-11-26T09:28:10-05:00</Time>
     </Item>
     <Item>
       <Source>mainbackground.png</Source>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -97,8 +97,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
+    </Item>
+    <Item>
+      <Source>laser2.png</Source>
+      <Name>laser2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser2.xnb</Output>
+      <Time>2011-04-02T20:18:02-04:00</Time>
     </Item>
     <Item>
       <Source>Sound\explosion.wav</Source>
@@ -106,7 +115,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -115,7 +124,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb</Output>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -124,8 +133,8 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb</Output>
-      <Extra>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma</Extra>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb</Output>
+      <Extra>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma</Extra>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -134,8 +143,8 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb</Output>
-      <Extra>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma</Extra>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb</Output>
+      <Extra>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma</Extra>
       <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <Item>
@@ -144,66 +153,49 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb</Output>
+      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb</Output>
       <Time>2011-04-02T20:18:02-04:00</Time>
-    </Item>
-    <Item>
-      <Source>laser2.png</Source>
-      <Name>laser2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser2.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
-    </Item>
-    <Item>
-      <Source>shipAnimation2.png</Source>
-      <Name>shipAnimation2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation2.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
+      <ContentProjectGUID>{301A0986-067D-486C-9FDE-689861944A3A}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Chris\Desktop\Shooter\Shooter\ShooterContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Chris\Desktop\Shooter\Shooter\ShooterContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Chris\Desktop\Shooter\Shooter\Shooter\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>F:\Shooter\Shooter\ShooterContent\</RootDirectory>
+      <LoggerRootDirectory>F:\Shooter\Shooter\Shooter\</LoggerRootDirectory>
+      <IntermediateDirectory>F:\Shooter\Shooter\Shooter\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2011-09-01T16:22:30-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-11-24T14:29:52.9663637-05:00</Value>
+        <Value>2013-08-26T14:29:46.4055615-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

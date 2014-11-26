@@ -48,9 +48,9 @@ namespace Shooter
 
             Active = true;
 
-            Damage = 2;
+            Damage = 1;
 
-            projectileMoveSpeed = 20f;
+            projectileMoveSpeed = 8f;
         }
 
         public void Update()

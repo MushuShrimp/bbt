@@ -22,6 +22,7 @@ namespace Shooter
 
         // Represents the player 
         Player player;
+        Player player2;
 
         // Keyboard states used to determine key presses
         KeyboardState currentKeyboardState;
@@ -53,8 +54,10 @@ namespace Shooter
         Random random;
 
         Texture2D projectileTexture;
+        Texture2D projectileTexture2;
         //List<Projectile> projectiles;
         Projectile projectile;
+        Projectile projectile2;
 
         // The rate of fire of the player laser
         TimeSpan fireTime;
@@ -96,6 +99,7 @@ namespace Shooter
         {
             //Initialize the player class
             player = new Player();
+            player2 = new Player();
 
             // Set a constant player move speed
             playerMoveSpeed = 8.0f;
@@ -120,6 +124,7 @@ namespace Shooter
 
            // projectiles = new List<Projectile>();
             projectile = new Projectile();
+            projectile2 = new Projectile();
 
             // Set the laser to fire every quarter second
             fireTime = TimeSpan.FromSeconds(.15f);
@@ -145,12 +150,19 @@ namespace Shooter
             // Load the player resources
             Animation playerAnimation = new Animation();
             Texture2D playerTexture = Content.Load<Texture2D>("shipAnimation");
-            playerAnimation.Initialize(playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.White, 1f, true);
+            playerAnimation.Initialize(playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.Red, 1f, true);
+
+            Animation playerAnimation2 = new Animation();
+            playerAnimation2.Initialize(playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.Blue, 1f, true);
 
 
             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y
             + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
             player.Initialize(playerAnimation, playerPosition);
+
+            Vector2 playerPosition2 = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X + 1000, GraphicsDevice.Viewport.TitleSafeArea.Y
+            + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            player2.Initialize(playerAnimation2, playerPosition2);
 
             
 
@@ -163,8 +175,10 @@ namespace Shooter
             enemyTexture = Content.Load<Texture2D>("mineAnimation");
 
             projectileTexture = Content.Load<Texture2D>("laser");
+            projectileTexture2 = Content.Load<Texture2D>("laser2");
 
             projectile.Initialize(GraphicsDevice.Viewport, projectileTexture, playerPosition);
+            projectile2.Initialize(GraphicsDevice.Viewport, projectileTexture2, playerPosition2);
 
             explosionTexture = Content.Load<Texture2D>("explosion");
 
@@ -296,29 +310,57 @@ namespace Shooter
             //        projectiles.RemoveAt(i);
             //    }
             //}
-            if (currentKeyboardState.IsKeyDown(Keys.Left) ||
-            currentGamePadState.DPad.Left == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.H) )//||
+            //currentGamePadState.DPad.Left == ButtonState.Pressed)
             {
                 projectile.Position.X -= projectile.projectileMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.Right) ||
-            currentGamePadState.DPad.Right == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.K) )//||
+            //currentGamePadState.DPad.Right == ButtonState.Pressed)
             {
                 projectile.Position.X += projectile.projectileMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.Up) ||
-            currentGamePadState.DPad.Up == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.U) )//||
+           // currentGamePadState.DPad.Up == ButtonState.Pressed)
             {
                 projectile.Position.Y -= projectile.projectileMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.Down) ||
-            currentGamePadState.DPad.Down == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.J) )//||
+            //currentGamePadState.DPad.Down == ButtonState.Pressed)
             {
                 projectile.Position.Y += projectile.projectileMoveSpeed;
             }
 
+
+
+
+            if (currentKeyboardState.IsKeyDown(Keys.NumPad1) )//||
+            //currentGamePadState.DPad.Left == ButtonState.Pressed)
+            {
+                projectile2.Position.X -= projectile.projectileMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.NumPad3) )//||
+           // currentGamePadState.DPad.Right == ButtonState.Pressed)
+            {
+                projectile2.Position.X += projectile.projectileMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.NumPad5) )//||
+            //currentGamePadState.DPad.Up == ButtonState.Pressed)
+            {
+                projectile2.Position.Y -= projectile.projectileMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.NumPad2) )//||
+            //currentGamePadState.DPad.Down == ButtonState.Pressed)
+            {
+                projectile2.Position.Y += projectile.projectileMoveSpeed;
+            }
+
+
+
             projectile.Position.X = MathHelper.Clamp(projectile.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width);
             projectile.Position.Y = MathHelper.Clamp(projectile.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height);
+            projectile2.Position.X = MathHelper.Clamp(projectile2.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width);
+            projectile2.Position.Y = MathHelper.Clamp(projectile2.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height);
 
         }
 
@@ -359,7 +401,7 @@ namespace Shooter
             bgLayer2.Update();
 
             // Update the enemies
-            UpdateEnemies(gameTime);
+            //UpdateEnemies(gameTime);
 
             // Update the collision
             UpdateCollision();
@@ -377,47 +419,75 @@ namespace Shooter
         private void UpdatePlayer(GameTime gameTime)
         {
             player.Update(gameTime);
+            player2.Update(gameTime);
 
             // Windows Phone Controls
-            while (TouchPanel.IsGestureAvailable)
-            {
-                GestureSample gesture = TouchPanel.ReadGesture();
-                if (gesture.GestureType == GestureType.FreeDrag)
-                {
-                    player.Position += gesture.Delta;
-                }
-            }
+            //while (TouchPanel.IsGestureAvailable)
+            //{
+            //    GestureSample gesture = TouchPanel.ReadGesture();
+            //    if (gesture.GestureType == GestureType.FreeDrag)
+            //    {
+            //        player.Position += gesture.Delta;
+            //        player2.Position += gesture.Delta;
+            //    }
+            //}
 
-            // Get Thumbstick Controls
-            player.Position.X += currentGamePadState.ThumbSticks.Left.X * playerMoveSpeed;
-            player.Position.Y -= currentGamePadState.ThumbSticks.Left.Y * playerMoveSpeed;
+            //// Get Thumbstick Controls
+            //player.Position.X += currentGamePadState.ThumbSticks.Left.X * playerMoveSpeed;
+            //player.Position.Y -= currentGamePadState.ThumbSticks.Left.Y * playerMoveSpeed;
+            //player2.Position.X += currentGamePadState.ThumbSticks.Left.X * playerMoveSpeed;
+            //player2.Position.Y -= currentGamePadState.ThumbSticks.Left.Y * playerMoveSpeed;
 
             // Use the Keyboard / Dpad
-            if (currentKeyboardState.IsKeyDown(Keys.A) ||
-            currentGamePadState.DPad.Left == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.A) )//||
+            //currentGamePadState.DPad.Left == ButtonState.Pressed)
             {
                 player.Position.X -= playerMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.D) ||
-            currentGamePadState.DPad.Right == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.D) )//||
+           // currentGamePadState.DPad.Right == ButtonState.Pressed)
             {
                 player.Position.X += playerMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.W) ||
-            currentGamePadState.DPad.Up == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.W) )//||
+            //currentGamePadState.DPad.Up == ButtonState.Pressed)
             {
                 player.Position.Y -= playerMoveSpeed;
             }
-            if (currentKeyboardState.IsKeyDown(Keys.S) ||
-            currentGamePadState.DPad.Down == ButtonState.Pressed)
+            if (currentKeyboardState.IsKeyDown(Keys.S) )//||
+            //currentGamePadState.DPad.Down == ButtonState.Pressed)
             {
                 player.Position.Y += playerMoveSpeed;
+            }
+
+
+            if (currentKeyboardState.IsKeyDown(Keys.Left) )//||
+            //currentGamePadState.DPad.Left == ButtonState.Pressed)
+            {
+                player2.Position.X -= playerMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.Right) )//||
+            //currentGamePadState.DPad.Right == ButtonState.Pressed)
+            {
+                player2.Position.X += playerMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.Up) )//||
+            //currentGamePadState.DPad.Up == ButtonState.Pressed)
+            {
+                player2.Position.Y -= playerMoveSpeed;
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.Down) )//||
+            //currentGamePadState.DPad.Down == ButtonState.Pressed)
+            {
+                player2.Position.Y += playerMoveSpeed;
             }
 
 
             // Make sure that the player does not go out of bounds
             player.Position.X = MathHelper.Clamp(player.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width);
             player.Position.Y = MathHelper.Clamp(player.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height);
+            player2.Position.X = MathHelper.Clamp(player2.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width);
+            player2.Position.Y = MathHelper.Clamp(player2.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height);
 
             // Fire only every interval we set as the fireTime
             //if (gameTime.TotalGameTime - previousFireTime > fireTime)
@@ -438,6 +508,10 @@ namespace Shooter
                 player.Health = 100;
                 score = 0;
             }
+            if (player2.Health < -0)
+            {
+                player2.Health = 100;
+            }
 
         }
 
@@ -449,10 +523,33 @@ namespace Shooter
             Rectangle rectangle2;
 
             // Only create the rectangle once for the player
-            rectangle1 = new Rectangle((int)player.Position.X,
-            (int)player.Position.Y,
+            rectangle1 = new Rectangle((int)player.Position.X - player.Width / 2,
+            (int)player.Position.Y - player.Height / 2,
             player.Width,
             player.Height);
+
+            rectangle2 = new Rectangle((int)projectile2.Position.X -
+                    projectile2.Width / 2, (int)projectile2.Position.Y -
+                    projectile2.Height / 2, projectile2.Width, projectile2.Height);
+
+            if (rectangle1.Intersects(rectangle2))
+            {
+                player.Health -= projectile2.Damage;
+            }
+
+            rectangle1 = new Rectangle((int)player2.Position.X - player.Width / 2,
+            (int)player2.Position.Y - player.Height / 2,
+            player2.Width,
+            player2.Height);
+
+            rectangle2 = new Rectangle((int)projectile.Position.X -
+                    projectile.Width / 2, (int)projectile.Position.Y -
+                    projectile.Height / 2, projectile.Width, projectile.Height);
+
+            if (rectangle1.Intersects(rectangle2))
+            {
+                player2.Health -= projectile.Damage;
+            }
 
             // Do the collision between the player and the enemies
             for (int i = 0; i < enemies.Count; i++)
@@ -523,6 +620,7 @@ namespace Shooter
 
             // Draw the Player
             player.Draw(spriteBatch);
+            player2.Draw(spriteBatch);
 
             // Draw the Enemies
             for (int i = 0; i < enemies.Count; i++)
@@ -532,8 +630,9 @@ namespace Shooter
 
             // Draw the Projectiles
            // for (int i = 0; i < projectiles.Count; i++)
-           // {
-                projectile.Draw(spriteBatch);
+            // {
+            projectile.Draw(spriteBatch);
+            projectile2.Draw(spriteBatch);
             //}
 
             // Draw the explosions
@@ -543,9 +642,9 @@ namespace Shooter
             }
 
             // Draw the score
-            spriteBatch.DrawString(font, "score: " + score, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
+            spriteBatch.DrawString(font, "Player 1 Health: " + player.Health, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
             // Draw the player health
-            spriteBatch.DrawString(font, "health: " + player.Health, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + 30), Color.White);
+            spriteBatch.DrawString(font, "Player 2 Health: " + player2.Health, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X + 500, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
 
             //Stop drawing
             spriteBatch.End();
