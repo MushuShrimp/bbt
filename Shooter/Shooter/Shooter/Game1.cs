@@ -86,6 +86,8 @@ namespace Shooter
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferHeight = 900;
             Content.RootDirectory = "Content";
         }
 
@@ -97,6 +99,8 @@ namespace Shooter
         /// </summary>
         protected override void Initialize()
         {
+
+
             //Initialize the player class
             player = new Player();
             player2 = new Player();
