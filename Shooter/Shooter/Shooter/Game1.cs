@@ -61,7 +61,6 @@ namespace Shooter
 
         // The rate of fire of the player laser
         TimeSpan fireTime;
-        TimeSpan previousFireTime;
 
         // Explosion graphics list
         Texture2D explosionTexture;
@@ -79,7 +78,6 @@ namespace Shooter
         Song gameplayMusic;
 
         //Number that holds the player score
-        int score;
         // The font used to display UI elements
         SpriteFont font;
 
@@ -137,7 +135,6 @@ namespace Shooter
             explosions = new List<Animation>();
 
             //Set player's score to zero
-            score = 0;
 
             base.Initialize();
         }
@@ -160,7 +157,7 @@ namespace Shooter
             playerAnimation2.Initialize(playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.Blue, 1f, true);
 
 
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y
+            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X + 50, GraphicsDevice.Viewport.TitleSafeArea.Y
             + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
             player.Initialize(playerAnimation, playerPosition);
 
@@ -275,7 +272,6 @@ namespace Shooter
                         explosionSound.Play();
 
                         //Add to the player's score
-                        score += enemies[i].Value;
                     }
 
                     enemies.RemoveAt(i);
@@ -361,10 +357,10 @@ namespace Shooter
 
 
 
-            projectile.Position.X = MathHelper.Clamp(projectile.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width);
-            projectile.Position.Y = MathHelper.Clamp(projectile.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height);
-            projectile2.Position.X = MathHelper.Clamp(projectile2.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width);
-            projectile2.Position.Y = MathHelper.Clamp(projectile2.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height);
+            projectile.Position.X = MathHelper.Clamp(projectile.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width + 50);
+            projectile.Position.Y = MathHelper.Clamp(projectile.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height + 10);
+            projectile2.Position.X = MathHelper.Clamp(projectile2.Position.X, 0, GraphicsDevice.Viewport.Width - projectile.Width + 50);
+            projectile2.Position.Y = MathHelper.Clamp(projectile2.Position.Y, 0, GraphicsDevice.Viewport.Height - projectile.Height + 10);
 
         }
 
@@ -401,8 +397,14 @@ namespace Shooter
             UpdatePlayer(gameTime);
 
             // Update the parallaxing background
-            bgLayer1.Update();
-            bgLayer2.Update();
+
+            //////////////////////////////////////
+            //NEED TO CHANGE BACKGROUND
+            //////////////////////////////////////
+           // bgLayer1.Update();
+           // bgLayer2.Update();
+            //////////////////////////////////////
+
 
             // Update the enemies
             //UpdateEnemies(gameTime);
@@ -488,10 +490,10 @@ namespace Shooter
 
 
             // Make sure that the player does not go out of bounds
-            player.Position.X = MathHelper.Clamp(player.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width);
-            player.Position.Y = MathHelper.Clamp(player.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height);
-            player2.Position.X = MathHelper.Clamp(player2.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width);
-            player2.Position.Y = MathHelper.Clamp(player2.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height);
+            player.Position.X = MathHelper.Clamp(player.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width + 100);
+            player.Position.Y = MathHelper.Clamp(player.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height + 50);
+            player2.Position.X = MathHelper.Clamp(player2.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width + 100);
+            player2.Position.Y = MathHelper.Clamp(player2.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height + 50);
 
             // Fire only every interval we set as the fireTime
             //if (gameTime.TotalGameTime - previousFireTime > fireTime)
@@ -510,7 +512,6 @@ namespace Shooter
             if (player.Health <= 0)
             {
                 player.Health = 100;
-                score = 0;
             }
             if (player2.Health < -0)
             {
@@ -616,11 +617,17 @@ namespace Shooter
             // Start drawing
             spriteBatch.Begin();
 
-            spriteBatch.Draw(mainBackground, Vector2.Zero, Color.White);
+           // spriteBatch.Draw(mainBackground, Vector2.Zero, Color.White);
 
             // Draw the moving background
-            bgLayer1.Draw(spriteBatch);
-            bgLayer2.Draw(spriteBatch);
+
+
+            ////////////////////////////////////////////////////////
+            //NEED TO CHANGE BACKGROUND
+            ////////////////////////////////////////////////////////
+           // bgLayer1.Draw(spriteBatch);
+           // bgLayer2.Draw(spriteBatch);
+            ////////////////////////////////////////////////////////
 
             // Draw the Player
             player.Draw(spriteBatch);

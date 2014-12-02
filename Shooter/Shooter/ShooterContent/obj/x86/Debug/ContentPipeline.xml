@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb</Output>
-      <Time>2014-12-01T08:56:00.5234754-05:00</Time>
+      <Time>2014-12-02T08:33:08.091536-05:00</Time>
     </Item>
     <Item>
       <Source>bgLayer2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb</Output>
-      <Time>2014-12-01T08:56:00.5274754-05:00</Time>
+      <Time>2014-12-02T08:33:08.0965295-05:00</Time>
     </Item>
     <Item>
       <Source>endMenu.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb</Output>
-      <Time>2014-12-01T08:56:00.5304754-05:00</Time>
+      <Time>2014-12-02T08:33:08.101523-05:00</Time>
     </Item>
     <Item>
       <Source>explosion.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb</Output>
-      <Time>2014-12-01T08:56:00.5334754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1035204-05:00</Time>
     </Item>
     <Item>
       <Source>laser.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb</Output>
-      <Time>2014-12-01T08:56:00.5374754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1075152-05:00</Time>
     </Item>
     <Item>
       <Source>mainbackground.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb</Output>
-      <Time>2014-12-01T08:56:00.5454754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1145061-05:00</Time>
     </Item>
     <Item>
       <Source>mainMenu.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb</Output>
-      <Time>2014-12-01T08:56:00.5424754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1125087-05:00</Time>
     </Item>
     <Item>
       <Source>mine.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb</Output>
-      <Time>2014-12-01T08:56:00.5464754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1155048-05:00</Time>
     </Item>
     <Item>
       <Source>mineAnimation.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb</Output>
-      <Time>2014-12-01T08:56:00.5474754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1175022-05:00</Time>
     </Item>
     <Item>
       <Source>player.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2014-12-01T08:56:00.5774754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1294866-05:00</Time>
     </Item>
     <Item>
       <Source>shipAnimation.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb</Output>
-      <Time>2014-12-01T08:56:00.5784754-05:00</Time>
+      <Time>2014-12-02T08:33:08.131484-05:00</Time>
     </Item>
     <Item>
       <Source>laser2.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser2.xnb</Output>
-      <Time>2014-12-01T08:56:00.5384754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1085139-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\explosion.wav</Source>
@@ -116,7 +116,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb</Output>
-      <Time>2014-12-01T08:56:00.4454754-05:00</Time>
+      <Time>2014-12-02T08:33:08.0505893-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\laserFire.wav</Source>
@@ -125,7 +125,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb</Output>
-      <Time>2014-12-01T08:56:00.5104754-05:00</Time>
+      <Time>2014-12-02T08:33:08.0765555-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\gameMusic.mp3</Source>
@@ -135,7 +135,7 @@
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb</Output>
       <Extra>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma</Extra>
-      <Time>2014-12-01T08:56:00.5074754-05:00</Time>
+      <Time>2014-12-02T08:33:08.0735594-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\menuMusic.mp3</Source>
@@ -145,7 +145,7 @@
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb</Output>
       <Extra>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma</Extra>
-      <Time>2014-12-01T08:56:00.5214754-05:00</Time>
+      <Time>2014-12-02T08:33:08.0875412-05:00</Time>
     </Item>
     <Item>
       <Source>gameFont.spritefont</Source>
@@ -154,7 +154,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb</Output>
-      <Time>2014-12-01T08:56:00.5354754-05:00</Time>
+      <Time>2014-12-02T08:33:08.1065165-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
