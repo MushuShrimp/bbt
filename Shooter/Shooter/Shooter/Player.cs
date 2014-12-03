@@ -19,6 +19,8 @@ namespace Shooter
         // Amount of hit points that player has
         public int Health;
 
+        public float MoveSpeed;
+
         // Get the width of the player ship
         public int Width
         {
@@ -37,7 +39,7 @@ namespace Shooter
         {
             PlayerAnimation = animation;
 
-
+            MoveSpeed = 8.0f;
             // Set the starting position of the player around the middle of the screen and to the back
             Position = position;
 

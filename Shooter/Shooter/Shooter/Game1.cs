@@ -20,6 +20,8 @@ namespace Shooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        PickUp pickUp;
+
         // Represents the player 
         Player player;
         Player player2;
@@ -33,7 +35,7 @@ namespace Shooter
         GamePadState previousGamePadState;
 
         // A movement speed for the player
-        float playerMoveSpeed;
+        
 
         // Image used to display the static background
         Texture2D mainBackground;
@@ -50,6 +52,10 @@ namespace Shooter
         TimeSpan enemySpawnTime;
         TimeSpan previousSpawnTime;
 
+        List<PickUp> pickUps;
+        Texture2D pickUp1;
+        Texture2D pickUp2;
+
         // A random number generator
         Random random;
 
@@ -61,6 +67,8 @@ namespace Shooter
 
         // The rate of fire of the player laser
         TimeSpan fireTime;
+        TimeSpan previousPickupSpawnTime;
+        TimeSpan pickupsSpawnTime;
 
         // Explosion graphics list
         Texture2D explosionTexture;
@@ -104,7 +112,8 @@ namespace Shooter
             player2 = new Player();
 
             // Set a constant player move speed
-            playerMoveSpeed = 8.0f;
+            
+            pickUps = new List<PickUp> ();
 
             //Enable the FreeDrag gesture.
             TouchPanel.EnabledGestures = GestureType.FreeDrag;
@@ -119,7 +128,8 @@ namespace Shooter
             previousSpawnTime = TimeSpan.Zero;
 
             // Used to determine how fast enemy respawns
-            enemySpawnTime = TimeSpan.FromSeconds(1.0f); 
+            enemySpawnTime = TimeSpan.FromSeconds(1.0f);
+            pickupsSpawnTime = TimeSpan.FromSeconds(1.0f);
 
             // Initialize our random number generator
             random = new Random();
@@ -165,7 +175,8 @@ namespace Shooter
             + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
             player2.Initialize(playerAnimation2, playerPosition2);
 
-            
+            pickUp1 = Content.Load<Texture2D>("pickUp1");
+            pickUp2 = Content.Load<Texture2D>("pickUp2");
 
             // Load the parallaxing background
             bgLayer1.Initialize(Content, "bgLayer1", GraphicsDevice.Viewport.Width, -1);
@@ -207,11 +218,11 @@ namespace Shooter
             try
             {
                 // Play the music
-                MediaPlayer.Play(song);
+               // MediaPlayer.Play(song);
 
 
                 // Loop the currently playing song
-                MediaPlayer.IsRepeating = true;
+               // MediaPlayer.IsRepeating = true;
             }
             catch { }
         }
@@ -242,6 +253,55 @@ namespace Shooter
 
             // Add the enemy to the active enemies list
             enemies.Add(enemy);
+        }
+
+        private void AddPickUps()
+        {
+
+            Vector2 position = new Vector2(random.Next( GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Width - 100), random.Next( GraphicsDevice.Viewport.Y, GraphicsDevice.Viewport.Height - 100));
+
+            Random rand = new Random();
+            int rantPickUp = rand.Next(0, 2);
+            PickUp pickup;
+            pickup = new PickUp();
+            switch (rantPickUp)
+            {
+                case 0:
+                    pickup.PickUpType = PickUp.pickUpType.TYPE1;
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp1, position);
+                    pickUps.Add(pickup);
+                    break;
+                case 1:
+                    pickup.PickUpType = PickUp.pickUpType.TYPE2;
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp2, position);
+                    pickUps.Add(pickup);
+                    break;
+            }
+        }
+
+        private void UpdatePickup(GameTime gameTime)
+        {
+            // Spawn a new enemy enemy every 1.5 seconds
+            if (gameTime.TotalGameTime - previousPickupSpawnTime > pickupsSpawnTime)
+            {
+                previousPickupSpawnTime = gameTime.TotalGameTime;
+
+                // Add an Enemy
+                AddPickUps();
+            }
+
+            // Update the Enemies
+            for (int i = pickUps.Count - 1; i >= 0; i--)
+            {
+                pickUps[i].Update(gameTime);
+
+                if (pickUps[i].Active == false)
+                {
+
+
+                    pickUps.RemoveAt(i);
+                }
+            }
         }
 
         private void UpdateEnemies(GameTime gameTime)
@@ -396,6 +456,8 @@ namespace Shooter
             //Update the player
             UpdatePlayer(gameTime);
 
+            UpdatePickup(gameTime);
+
             // Update the parallaxing background
 
             //////////////////////////////////////
@@ -448,44 +510,45 @@ namespace Shooter
             if (currentKeyboardState.IsKeyDown(Keys.A) )//||
             //currentGamePadState.DPad.Left == ButtonState.Pressed)
             {
-                player.Position.X -= playerMoveSpeed;
+                player.Position.X -= player.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.D) )//||
            // currentGamePadState.DPad.Right == ButtonState.Pressed)
             {
-                player.Position.X += playerMoveSpeed;
+                player.Position.X += player.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.W) )//||
             //currentGamePadState.DPad.Up == ButtonState.Pressed)
             {
-                player.Position.Y -= playerMoveSpeed;
+                player.Position.Y -= player.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.S) )//||
             //currentGamePadState.DPad.Down == ButtonState.Pressed)
             {
-                player.Position.Y += playerMoveSpeed;
+                player.Position.Y += player.MoveSpeed;
+
             }
 
 
             if (currentKeyboardState.IsKeyDown(Keys.Left) )//||
             //currentGamePadState.DPad.Left == ButtonState.Pressed)
             {
-                player2.Position.X -= playerMoveSpeed;
+                player2.Position.X -= player2.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.Right) )//||
             //currentGamePadState.DPad.Right == ButtonState.Pressed)
             {
-                player2.Position.X += playerMoveSpeed;
+                player2.Position.X += player2.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.Up) )//||
             //currentGamePadState.DPad.Up == ButtonState.Pressed)
             {
-                player2.Position.Y -= playerMoveSpeed;
+                player2.Position.Y -= player2.MoveSpeed;
             }
             if (currentKeyboardState.IsKeyDown(Keys.Down) )//||
             //currentGamePadState.DPad.Down == ButtonState.Pressed)
             {
-                player2.Position.Y += playerMoveSpeed;
+                player2.Position.Y += player2.MoveSpeed;
             }
 
 
@@ -646,6 +709,10 @@ namespace Shooter
             projectile2.Draw(spriteBatch);
             //}
 
+            for (int i = 0; i < pickUps.Count; i++)
+            {
+                pickUps[i].Draw(spriteBatch);
+            }
             // Draw the explosions
             for (int i = 0; i < explosions.Count; i++)
             {
