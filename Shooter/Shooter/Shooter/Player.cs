@@ -17,7 +17,7 @@ namespace Shooter
         public bool Active;
 
         // Amount of hit points that player has
-        public int Health;
+        public int Score;
 
         public float MoveSpeed;
 
@@ -48,8 +48,6 @@ namespace Shooter
             Active = true;
 
 
-            // Set the player health
-            Health = 100;
         }
 
 

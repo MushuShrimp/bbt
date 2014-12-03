@@ -101,3 +101,5 @@ C:\Users\Chris\Desktop\bbt\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.exe
 C:\Users\Chris\Desktop\bbt\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.pdb
 C:\Users\Chris\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp1.xnb
 C:\Users\Chris\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp2.xnb
+C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp1.xnb
+C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp2.xnb

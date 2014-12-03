@@ -267,13 +267,11 @@ namespace Shooter
             switch (rantPickUp)
             {
                 case 0:
-                    pickup.PickUpType = PickUp.pickUpType.TYPE1;
-                    pickup.Initialize(GraphicsDevice.Viewport, pickUp1, position);
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp1, position, PickUp.pickUpType.TYPE1);
                     pickUps.Add(pickup);
                     break;
                 case 1:
-                    pickup.PickUpType = PickUp.pickUpType.TYPE2;
-                    pickup.Initialize(GraphicsDevice.Viewport, pickUp2, position);
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp2, position, PickUp.pickUpType.TYPE2);
                     pickUps.Add(pickup);
                     break;
             }
@@ -571,15 +569,15 @@ namespace Shooter
             //    laserSound.Play();
             //}
 
-            // reset score if player health goes to zero
-            if (player.Health <= 0)
-            {
-                player.Health = 100;
-            }
-            if (player2.Health < -0)
-            {
-                player2.Health = 100;
-            }
+            //// reset score if player health goes to zero
+            //if (player.Health <= 0)
+            //{
+            //    player.Health = 100;
+            //}
+            //if (player2.Health < -0)
+            //{
+            //    player2.Health = 100;
+            //}
 
         }
 
@@ -596,75 +594,128 @@ namespace Shooter
             player.Width,
             player.Height);
 
+            //create rectangle for the 2nd player's projectile
             rectangle2 = new Rectangle((int)projectile2.Position.X -
                     projectile2.Width / 2, (int)projectile2.Position.Y -
                     projectile2.Height / 2, projectile2.Width, projectile2.Height);
 
+            //check for collision between the first player and the 2nd players projectile
             if (rectangle1.Intersects(rectangle2))
             {
-                player.Health -= projectile2.Damage;
+                player2.Score += projectile2.Damage;
             }
 
+            //check for collision between the first player and any pick ups available
+            for (int i = 0; i < pickUps.Count; i++)
+            {
+                rectangle2 = new Rectangle((int)pickUps[i].Position.X, (int)pickUps[i].Position.Y, pickUps[i].Width / 20, pickUps[i].Height / 20);
+                if (rectangle1.Intersects(rectangle2))
+                {
+                    if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE1)
+                    {
+                        //increase the size of the projectile
+                        projectile.projectileScale += 0.1f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
+                    {
+                        //decrease the enemy speed by 10%
+                        player2.MoveSpeed = player2.MoveSpeed * 0.9f;
+                    }
+                    pickUps.RemoveAt(i);
+                }
+            }
+
+
+
+
+
+
+            //create a rectangle for the 2nd player
             rectangle1 = new Rectangle((int)player2.Position.X - player.Width / 2,
             (int)player2.Position.Y - player.Height / 2,
             player2.Width,
             player2.Height);
 
-            rectangle2 = new Rectangle((int)projectile.Position.X -
-                    projectile.Width / 2, (int)projectile.Position.Y -
-                    projectile.Height / 2, projectile.Width, projectile.Height);
+            //create rectangle for the first players projectile
+            rectangle2 = new Rectangle((int)projectile.Position.X - (projectile.Width * (1 + (int)projectile.projectileScale)) / 2,
+                (int)projectile.Position.Y - (projectile.Height * (1 + (int)projectile.projectileScale)) / 2,
+                projectile.Width * (1 + (int)projectile.projectileScale),
+                projectile.Height * (1 + (int)projectile.projectileScale));
 
+            //check for collision between the 2nd player and the first players projectile
             if (rectangle1.Intersects(rectangle2))
             {
-                player2.Health -= projectile.Damage;
+                player.Score += projectile.Damage;
             }
 
-            // Do the collision between the player and the enemies
-            for (int i = 0; i < enemies.Count; i++)
+            for (int i = 0; i < pickUps.Count; i++)
             {
-                rectangle2 = new Rectangle((int)enemies[i].Position.X,
-                (int)enemies[i].Position.Y,
-                enemies[i].Width,
-                enemies[i].Height);
-
-                // Determine if the two objects collided with each
-                // other
+                rectangle2 = new Rectangle((int)pickUps[i].Position.X, (int)pickUps[i].Position.Y, pickUps[i].Width / 20, pickUps[i].Height / 20);
                 if (rectangle1.Intersects(rectangle2))
                 {
-                    // Subtract the health from the player based on
-                    // the enemy damage
-                    player.Health -= enemies[i].Damage;
-
-                    // Since the enemy collided with the player
-                    // destroy it
-                    enemies[i].Health = 0;
-
-                    // If the player health is less than zero we died
-                    if (player.Health <= 0)
-                        player.Active = false;
+                    if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE1)
+                    {
+                        //increase the size of the projectile
+                        projectile2.projectileScale += 0.1f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
+                    {
+                        //decrease the enemy speed by 10%
+                        player.MoveSpeed = player.MoveSpeed * 0.9f;
+                    }
+                    pickUps.RemoveAt(i);
                 }
-
             }
 
+
+
+
+            // Do the collision between the player and the enemies
+            //for (int i = 0; i < enemies.Count; i++)
+            //{
+            //    rectangle2 = new Rectangle((int)enemies[i].Position.X,
+            //    (int)enemies[i].Position.Y,
+            //    enemies[i].Width,
+            //    enemies[i].Height);
+
+            //    // Determine if the two objects collided with each
+            //    // other
+            //    if (rectangle1.Intersects(rectangle2))
+            //    {
+            //        // Subtract the health from the player based on
+            //        // the enemy damage
+            //        player.Health -= enemies[i].Damage;
+
+            //        // Since the enemy collided with the player
+            //        // destroy it
+            //        enemies[i].Health = 0;
+
+            //        // If the player health is less than zero we died
+            //        if (player.Health <= 0)
+            //            player.Active = false;
+            //    }
+
+            //}
+
             // Projectile vs Enemy Collision
-                for (int j = 0; j < enemies.Count; j++)
-                {
-                    // Create the rectangles we need to determine if we collided with each other
-                    rectangle1 = new Rectangle((int)projectile.Position.X -
-                    projectile.Width / 2, (int)projectile.Position.Y -
-                    projectile.Height / 2, projectile.Width, projectile.Height);
+                //for (int j = 0; j < enemies.Count; j++)
+                //{
+                //    // Create the rectangles we need to determine if we collided with each other
+                //    rectangle1 = new Rectangle((int)projectile.Position.X -
+                //    projectile.Width / 2, (int)projectile.Position.Y -
+                //    projectile.Height / 2, projectile.Width, projectile.Height);
 
-                    rectangle2 = new Rectangle((int)enemies[j].Position.X - enemies[j].Width / 2,
-                    (int)enemies[j].Position.Y - enemies[j].Height / 2,
-                    enemies[j].Width, enemies[j].Height);
+                //    rectangle2 = new Rectangle((int)enemies[j].Position.X - enemies[j].Width / 2,
+                //    (int)enemies[j].Position.Y - enemies[j].Height / 2,
+                //    enemies[j].Width, enemies[j].Height);
 
-                    // Determine if the two objects collided with each other
-                    if (rectangle1.Intersects(rectangle2))
-                    {
-                        enemies[j].Health -= projectile.Damage;
-                        //projectile.Active = false;
-                    }
-                }
+                //    // Determine if the two objects collided with each other
+                //    if (rectangle1.Intersects(rectangle2))
+                //    {
+                //        enemies[j].Health -= projectile.Damage;
+                //        //projectile.Active = false;
+                //    }
+                //}
             
         }
 
@@ -720,9 +771,9 @@ namespace Shooter
             }
 
             // Draw the score
-            spriteBatch.DrawString(font, "Player 1 Health: " + player.Health, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
+            spriteBatch.DrawString(font, "Player 1 Score: " + player.Score, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
             // Draw the player health
-            spriteBatch.DrawString(font, "Player 2 Health: " + player2.Health, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X + 500, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
+            spriteBatch.DrawString(font, "Player 2 Score: " + player2.Score, new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X + 500, GraphicsDevice.Viewport.TitleSafeArea.Y), Color.White);
 
             //Stop drawing
             spriteBatch.End();

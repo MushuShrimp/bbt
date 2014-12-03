@@ -21,6 +21,8 @@ namespace Shooter
         // The amount of damage the projectile can inflict to an enemy
         public int Damage;
 
+        public float projectileScale;
+
         // Represents the viewable boundary of the game
         Viewport viewport;
 
@@ -48,6 +50,8 @@ namespace Shooter
 
             Active = true;
 
+            projectileScale = 1.0f;
+
             Damage = 1;
 
             projectileMoveSpeed = 8f;
@@ -67,7 +71,7 @@ namespace Shooter
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture, Position, null, Color.White, 0f,
-            new Vector2(Width / 2, Height / 2), 1f, SpriteEffects.None, 0f);
+            new Vector2(Width / 2, Height / 2), projectileScale, SpriteEffects.None, 0f);
         }
     }
 }

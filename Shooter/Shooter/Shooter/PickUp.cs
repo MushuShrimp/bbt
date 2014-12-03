@@ -35,9 +35,9 @@ namespace Shooter
             }
         }
 
-        public void Initialize(Viewport viewport, Texture2D texture, Vector2 position)
+        public void Initialize(Viewport viewport, Texture2D texture, Vector2 position, pickUpType pickuptype)
         {
-            PickUpType = pickUpType.NONE;
+            PickUpType = pickuptype;
 
             Active = true;
             this.viewport = viewport;

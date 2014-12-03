@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb</Output>
+      <Time>2014-12-03T08:30:02.6714267-05:00</Time>
     </Item>
     <Item>
       <Source>bgLayer2.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb</Output>
+      <Time>2014-12-03T08:30:02.6744105-05:00</Time>
     </Item>
     <Item>
       <Source>endMenu.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb</Output>
+      <Time>2014-12-03T08:30:02.6773943-05:00</Time>
     </Item>
     <Item>
       <Source>explosion.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb</Output>
+      <Time>2014-12-03T08:30:02.6803781-05:00</Time>
     </Item>
     <Item>
       <Source>laser.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb</Output>
-      <Time>2014-11-26T09:28:10-05:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb</Output>
+      <Time>2014-12-03T08:30:02.6843565-05:00</Time>
     </Item>
     <Item>
       <Source>mainbackground.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb</Output>
+      <Time>2014-12-03T08:30:02.6903241-05:00</Time>
     </Item>
     <Item>
       <Source>mainMenu.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb</Output>
+      <Time>2014-12-03T08:30:02.6883349-05:00</Time>
     </Item>
     <Item>
       <Source>mine.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb</Output>
+      <Time>2014-12-03T08:30:02.6913187-05:00</Time>
     </Item>
     <Item>
       <Source>mineAnimation.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb</Output>
+      <Time>2014-12-03T08:30:02.6923133-05:00</Time>
     </Item>
     <Item>
       <Source>player.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb</Output>
+      <Time>2014-12-03T08:30:02.7062377-05:00</Time>
     </Item>
     <Item>
       <Source>shipAnimation.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb</Output>
+      <Time>2014-12-03T08:30:02.7072323-05:00</Time>
     </Item>
     <Item>
       <Source>laser2.png</Source>
@@ -106,8 +106,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser2.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser2.xnb</Output>
+      <Time>2014-12-03T08:30:02.6843565-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pickUp1.png</Source>
+      <Name>pickUp1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp1.xnb</Output>
+      <Time>2014-12-03T08:30:02.7042485-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pickUp2.png</Source>
+      <Name>pickUp2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp2.xnb</Output>
+      <Time>2014-12-03T08:30:02.7052431-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\explosion.wav</Source>
@@ -115,8 +133,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb</Output>
+      <Time>2014-12-03T08:30:02.6306481-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\laserFire.wav</Source>
@@ -124,8 +142,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb</Output>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb</Output>
+      <Time>2014-12-03T08:30:02.6584969-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\gameMusic.mp3</Source>
@@ -133,9 +151,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb</Output>
-      <Extra>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma</Extra>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb</Output>
+      <Extra>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma</Extra>
+      <Time>2014-12-03T08:30:02.6555131-05:00</Time>
     </Item>
     <Item>
       <Source>Sound\menuMusic.mp3</Source>
@@ -143,9 +161,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb</Output>
-      <Extra>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma</Extra>
-      <Time>2011-04-02T20:18:04-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb</Output>
+      <Extra>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma</Extra>
+      <Time>2014-12-03T08:30:02.6694375-05:00</Time>
     </Item>
     <Item>
       <Source>gameFont.spritefont</Source>
@@ -153,8 +171,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb</Output>
-      <Time>2011-04-02T20:18:02-04:00</Time>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb</Output>
+      <Time>2014-12-03T08:30:02.6823673-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -163,10 +181,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>F:\Shooter\Shooter\ShooterContent\</RootDirectory>
-      <LoggerRootDirectory>F:\Shooter\Shooter\Shooter\</LoggerRootDirectory>
-      <IntermediateDirectory>F:\Shooter\Shooter\Shooter\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>F:\Shooter\Shooter\Shooter\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\cku\Desktop\bbt\Shooter\Shooter\ShooterContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
