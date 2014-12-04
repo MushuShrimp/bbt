@@ -16,7 +16,7 @@ namespace Shooter
 
         public bool Active;
 
-        public enum pickUpType { TYPE1, TYPE2, NONE };
+        public enum pickUpType { TYPE1, TYPE2, TYPE3, TYPE4, NONE };
         public pickUpType PickUpType;
         Viewport viewport;
         public int Width

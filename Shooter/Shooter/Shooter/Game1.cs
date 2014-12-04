@@ -55,6 +55,8 @@ namespace Shooter
         List<PickUp> pickUps;
         Texture2D pickUp1;
         Texture2D pickUp2;
+        Texture2D pickUp3;
+        Texture2D pickUp4;
 
         // A random number generator
         Random random;
@@ -177,6 +179,8 @@ namespace Shooter
 
             pickUp1 = Content.Load<Texture2D>("pickUp1");
             pickUp2 = Content.Load<Texture2D>("pickUp2");
+            pickUp3 = Content.Load<Texture2D>("pickUp3");
+            pickUp4 = Content.Load<Texture2D>("pickUp4");
 
             // Load the parallaxing background
             bgLayer1.Initialize(Content, "bgLayer1", GraphicsDevice.Viewport.Width, -1);
@@ -261,7 +265,7 @@ namespace Shooter
             Vector2 position = new Vector2(random.Next( GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Width - 100), random.Next( GraphicsDevice.Viewport.Y, GraphicsDevice.Viewport.Height - 100));
 
             Random rand = new Random();
-            int rantPickUp = rand.Next(0, 2);
+            int rantPickUp = rand.Next(0, 4);
             PickUp pickup;
             pickup = new PickUp();
             switch (rantPickUp)
@@ -272,6 +276,14 @@ namespace Shooter
                     break;
                 case 1:
                     pickup.Initialize(GraphicsDevice.Viewport, pickUp2, position, PickUp.pickUpType.TYPE2);
+                    pickUps.Add(pickup);
+                    break;
+                case 2:
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp3, position, PickUp.pickUpType.TYPE3);
+                    pickUps.Add(pickup);
+                    break;
+                case 3:
+                    pickup.Initialize(GraphicsDevice.Viewport, pickUp4, position, PickUp.pickUpType.TYPE4);
                     pickUps.Add(pickup);
                     break;
             }
@@ -613,13 +625,23 @@ namespace Shooter
                 {
                     if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE1)
                     {
-                        //increase the size of the projectile
-                        projectile.projectileScale += 0.1f;
+                        //increase the size of the projectile by 5%
+                        projectile.projectileScale = projectile.projectileScale * 1.05f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
                     {
                         //decrease the enemy speed by 10%
                         player2.MoveSpeed = player2.MoveSpeed * 0.9f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE3)
+                    {
+                        //increase player speed by 10%
+                        player.MoveSpeed = player.MoveSpeed * 1.1f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE4)
+                    {
+                        //decrease the size of enemy projectile by 5%
+                        projectile2.projectileScale = projectile.projectileScale * 0.95f;
                     }
                     pickUps.RemoveAt(i);
                 }
@@ -655,13 +677,23 @@ namespace Shooter
                 {
                     if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE1)
                     {
-                        //increase the size of the projectile
-                        projectile2.projectileScale += 0.1f;
+                        //increase the size of the projectile by 5%
+                        projectile2.projectileScale = projectile2.projectileScale * 1.05f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
                     {
                         //decrease the enemy speed by 10%
                         player.MoveSpeed = player.MoveSpeed * 0.9f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE3)
+                    {
+                        //increase player speed by 10%
+                        player2.MoveSpeed = player.MoveSpeed * 1.1f;
+                    }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE4)
+                    {
+                        //decrease decrease size of enemy projectile
+                        projectile.projectileScale = projectile.projectileScale * 0.95f;
                     }
                     pickUps.RemoveAt(i);
                 }
