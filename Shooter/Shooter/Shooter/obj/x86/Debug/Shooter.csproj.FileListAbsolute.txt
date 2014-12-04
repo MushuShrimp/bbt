@@ -105,3 +105,5 @@ C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp1.x
 C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp2.xnb
 C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp3.xnb
 C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp4.xnb
+C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp5.xnb
+C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp6.xnb

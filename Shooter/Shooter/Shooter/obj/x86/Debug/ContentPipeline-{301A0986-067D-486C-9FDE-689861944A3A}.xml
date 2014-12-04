@@ -192,6 +192,24 @@
       <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp4.xnb</Output>
       <Time>2014-12-04T08:56:14.3782756-05:00</Time>
     </Item>
+    <Item>
+      <Source>pickUp5.png</Source>
+      <Name>pickUp5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp5.xnb</Output>
+      <Time>2014-12-04T09:09:36.6447328-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pickUp6.png</Source>
+      <Name>pickUp6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cku\Desktop\bbt\Shooter\Shooter\Shooter\bin\x86\Debug\Content\pickUp6.xnb</Output>
+      <Time>2014-12-04T09:10:38.6983433-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{301A0986-067D-486C-9FDE-689861944A3A}</ContentProjectGUID>
