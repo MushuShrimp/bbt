@@ -17,6 +17,14 @@ namespace Shooter
         public bool Active;
 
         public enum pickUpType { TYPE1, TYPE2, TYPE3, TYPE4, TYPE5, TYPE6, NONE };
+        /*
+         * TYPE1 = projectile size up
+         * TYPE2 = enemy projectile size down
+         * TYPE3 = player move speed up
+         * TYPE4 = enemy move speed down
+         * TYPE5 = player projectile speed up
+         * TYPE6 = enemy projectile speed down
+         * */
         public pickUpType PickUpType;
         Viewport viewport;
         public int Width

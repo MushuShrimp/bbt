@@ -242,26 +242,6 @@ namespace Shooter
             explosions.Add(explosion);
         }
 
-        private void AddEnemy()
-        {
-            // Create the animation object
-            Animation enemyAnimation = new Animation();
-
-            // Initialize the animation with the correct animation information
-            enemyAnimation.Initialize(enemyTexture, Vector2.Zero, 47, 61, 8, 30, Color.White, 1f, true);
-
-            // Randomly generate the position of the enemy
-            Vector2 position = new Vector2(GraphicsDevice.Viewport.Width + enemyTexture.Width / 2, random.Next(100, GraphicsDevice.Viewport.Height - 100));
-
-            // Create an enemy
-            Enemy enemy = new Enemy();
-
-            // Initialize the enemy
-            enemy.Initialize(enemyAnimation, position);
-
-            // Add the enemy to the active enemies list
-            enemies.Add(enemy);
-        }
 
         private void AddPickUps()
         {
@@ -326,40 +306,7 @@ namespace Shooter
             }
         }
 
-        private void UpdateEnemies(GameTime gameTime)
-        {
-            // Spawn a new enemy enemy every 1.5 seconds
-            if (gameTime.TotalGameTime - previousSpawnTime > enemySpawnTime)
-            {
-                previousSpawnTime = gameTime.TotalGameTime;
-
-                // Add an Enemy
-                AddEnemy();
-            }
-
-            // Update the Enemies
-            for (int i = enemies.Count - 1; i >= 0; i--)
-            {
-                enemies[i].Update(gameTime);
-
-                if (enemies[i].Active == false)
-                {
-                    // If not active and health <= 0
-                    if (enemies[i].Health <= 0)
-                    {
-                        // Add an explosion
-                        AddExplosion(enemies[i].Position);
-
-                        // Play the explosion sound
-                        explosionSound.Play();
-
-                        //Add to the player's score
-                    }
-
-                    enemies.RemoveAt(i);
-                }
-            }
-        }
+        
 
         private void UpdateExplosions(GameTime gameTime)
         {
@@ -373,25 +320,10 @@ namespace Shooter
             }
         }
 
-        //private void AddProjectile(Vector2 position)
-        //{
-        //    Projectile projectile = new Projectile();
-        //    projectile.Initialize(GraphicsDevice.Viewport, projectileTexture, position);
-        //    projectiles.Add(projectile);
-        //}
 
         private void UpdateProjectiles()
         {
-            // Update the Projectiles
-            //for (int i = projectiles.Count - 1; i >= 0; i--)
-            //{
-            //    projectiles[i].Update();
-
-            //    if (projectiles[i].Active == false)
-            //    {
-            //        projectiles.RemoveAt(i);
-            //    }
-            //}
+            
             if (currentKeyboardState.IsKeyDown(Keys.H) )//||
             //currentGamePadState.DPad.Left == ButtonState.Pressed)
             {
@@ -489,10 +421,6 @@ namespace Shooter
            // bgLayer2.Update();
             //////////////////////////////////////
 
-
-            // Update the enemies
-            //UpdateEnemies(gameTime);
-
             // Update the collision
             UpdateCollision();
 
@@ -580,28 +508,6 @@ namespace Shooter
             player2.Position.X = MathHelper.Clamp(player2.Position.X, 0, GraphicsDevice.Viewport.Width - player.Width + 100);
             player2.Position.Y = MathHelper.Clamp(player2.Position.Y, 0, GraphicsDevice.Viewport.Height - player.Height + 50);
 
-            // Fire only every interval we set as the fireTime
-            //if (gameTime.TotalGameTime - previousFireTime > fireTime)
-            //{
-            //    // Reset our current time
-            //    previousFireTime = gameTime.TotalGameTime;
-
-            //    // Add the projectile, but add it to the front and center of the player
-            //    AddProjectile(player.Position + new Vector2(player.Width / 2, 0));
-
-            //    // Play the laser sound
-            //    laserSound.Play();
-            //}
-
-            //// reset score if player health goes to zero
-            //if (player.Health <= 0)
-            //{
-            //    player.Health = 100;
-            //}
-            //if (player2.Health < -0)
-            //{
-            //    player2.Health = 100;
-            //}
 
         }
 
@@ -619,9 +525,10 @@ namespace Shooter
             player.Height);
 
             //create rectangle for the 2nd player's projectile
-            rectangle2 = new Rectangle((int)projectile2.Position.X -
-                    projectile2.Width / 2, (int)projectile2.Position.Y -
-                    projectile2.Height / 2, projectile2.Width, projectile2.Height);
+            rectangle2 = new Rectangle((int)projectile2.Position.X - (projectile2.Width * (1 + (int)projectile2.projectileScale)) / 2,
+                (int)projectile2.Position.Y - (projectile2.Height * (1 + (int)projectile2.projectileScale)) / 2,
+                projectile2.Width * (1 + (int)projectile2.projectileScale),
+                projectile2.Height * (1 + (int)projectile2.projectileScale));
 
             //check for collision between the first player and the 2nd players projectile
             if (rectangle1.Intersects(rectangle2))
@@ -642,8 +549,8 @@ namespace Shooter
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
                     {
-                        //decrease the enemy speed by 10%
-                        player2.MoveSpeed = player2.MoveSpeed * 0.9f;
+                        //decrease the size of enemy projectile by 5%
+                        projectile2.projectileScale = projectile2.projectileScale * 0.95f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE3)
                     {
@@ -652,18 +559,18 @@ namespace Shooter
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE4)
                     {
-                        //decrease the size of enemy projectile by 5%
-                        projectile2.projectileScale = projectile2.projectileScale * 0.95f;
+                        //decrease the enemy speed by 10%
+                        player2.MoveSpeed = player2.MoveSpeed * 0.9f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE5)
                     {
-                        //decrease the speed of enemy projectile speed by 5%
-                        projectile2.projectileMoveSpeed = projectile2.projectileMoveSpeed * 0.95f;
+                        //increase the speed of projectile by 5%
+                        projectile.projectileMoveSpeed = projectile.projectileMoveSpeed * 1.05f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE6)
                     {
-                        //increase the speed of projectile by 5%
-                        projectile.projectileMoveSpeed = projectile.projectileMoveSpeed * 1.05f;
+                        //decrease the speed of enemy projectile speed by 5%
+                        projectile2.projectileMoveSpeed = projectile2.projectileMoveSpeed * 0.95f;
                     }
                     pickUps.RemoveAt(i);
                 }
@@ -704,8 +611,8 @@ namespace Shooter
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE2)
                     {
-                        //decrease the enemy speed by 10%
-                        player.MoveSpeed = player.MoveSpeed * 0.9f;
+                        //decrease decrease size of enemy projectile
+                        projectile.projectileScale = projectile.projectileScale * 0.95f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE3)
                     {
@@ -714,73 +621,22 @@ namespace Shooter
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE4)
                     {
-                        //decrease decrease size of enemy projectile
-                        projectile.projectileScale = projectile.projectileScale * 0.95f;
+                        //decrease the enemy speed by 10%
+                        player.MoveSpeed = player.MoveSpeed * 0.9f;
                     }
                     else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE5)
-                    {
-                        //decrease the speed of enemy projectile speed by 5%
-                        projectile.projectileMoveSpeed = projectile.projectileMoveSpeed * 0.95f;
-                    }
-                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE6)
                     {
                         //increase the speed of projectile by 5%
                         projectile2.projectileMoveSpeed = projectile2.projectileMoveSpeed * 1.05f;
                     }
+                    else if (pickUps[i].PickUpType == PickUp.pickUpType.TYPE6)
+                    {
+                        //decrease the speed of enemy projectile speed by 5%
+                        projectile.projectileMoveSpeed = projectile.projectileMoveSpeed * 0.95f;
+                    }
                     pickUps.RemoveAt(i);
                 }
             }
-
-
-
-
-            // Do the collision between the player and the enemies
-            //for (int i = 0; i < enemies.Count; i++)
-            //{
-            //    rectangle2 = new Rectangle((int)enemies[i].Position.X,
-            //    (int)enemies[i].Position.Y,
-            //    enemies[i].Width,
-            //    enemies[i].Height);
-
-            //    // Determine if the two objects collided with each
-            //    // other
-            //    if (rectangle1.Intersects(rectangle2))
-            //    {
-            //        // Subtract the health from the player based on
-            //        // the enemy damage
-            //        player.Health -= enemies[i].Damage;
-
-            //        // Since the enemy collided with the player
-            //        // destroy it
-            //        enemies[i].Health = 0;
-
-            //        // If the player health is less than zero we died
-            //        if (player.Health <= 0)
-            //            player.Active = false;
-            //    }
-
-            //}
-
-            // Projectile vs Enemy Collision
-                //for (int j = 0; j < enemies.Count; j++)
-                //{
-                //    // Create the rectangles we need to determine if we collided with each other
-                //    rectangle1 = new Rectangle((int)projectile.Position.X -
-                //    projectile.Width / 2, (int)projectile.Position.Y -
-                //    projectile.Height / 2, projectile.Width, projectile.Height);
-
-                //    rectangle2 = new Rectangle((int)enemies[j].Position.X - enemies[j].Width / 2,
-                //    (int)enemies[j].Position.Y - enemies[j].Height / 2,
-                //    enemies[j].Width, enemies[j].Height);
-
-                //    // Determine if the two objects collided with each other
-                //    if (rectangle1.Intersects(rectangle2))
-                //    {
-                //        enemies[j].Health -= projectile.Damage;
-                //        //projectile.Active = false;
-                //    }
-                //}
-            
         }
 
 
